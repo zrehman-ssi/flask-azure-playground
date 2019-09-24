@@ -1,5 +1,5 @@
 from app import app
+from app import views
 
-@app.route("/")
-def hello_world():
-    return "Hello World! This has been updated."
+if __name__ == "__main__":
+    app.run()

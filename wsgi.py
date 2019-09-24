@@ -1,4 +1,5 @@
-from startup import app as application
+from app import app
+from app import views
 
 if __name__ == "__main__":
-    application.run()
+    app.run()
