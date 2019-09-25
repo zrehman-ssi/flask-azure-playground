@@ -1,5 +1,3 @@
-from app.main import app
-from app.main.controllers import user_controller
+from app.main import create_app
 
-if __name__ == "__main__":
-    app.run()
+app = create_app()
