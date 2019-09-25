@@ -1,5 +1,9 @@
-from flask import Flask
-from flask_bcrypt import Bcrypt
+from flask import Blueprint
+from flask_restful import Api
 
-app = Flask(__name__)
-flask_bcrypt = Bcrypt(app)
+from app.main.controllers.user_controller import Hello
+
+blueprint = Blueprint("api", __name__)
+api = Api(blueprint)
+
+api.add_resource(Hello, '/', '/')
