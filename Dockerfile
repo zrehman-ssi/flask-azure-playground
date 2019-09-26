@@ -14,7 +14,7 @@ RUN apt update && apt install -y build-essential \
 ENV connection_string postgres://zeburrehman@rwhealthtech-srv:Netsolpk1!@rwhealthtech-srv.postgres.database.azure.com:5432/SIB_DB
 WORKDIR /home/projects/flask-azure-playground
 COPY . .
-RUN apt update \
-    python3.7 -m pip install --upgrade pip \
+RUN python3.7 -m pip install --upgrade pip \
     && python3.7 -m venv venv 
-CMD /home/projects/flask-azure-playground/venv/bin/pip3.7 install -r requirements.txt && /home/projects/flask-azure-playground/venv/bin/uwsgi --socket 0.0.0.0:5000 --protocol=http -w wsgi:app
+CMD /home/projects/flask-azure-playground/venv/bin/pip3.7 install -r requirements.txt \
+    && /home/projects/flask-azure-playground/venv/bin/uwsgi --socket 0.0.0.0:5000 --protocol=http -w wsgi:app
